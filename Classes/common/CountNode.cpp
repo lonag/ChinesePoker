@@ -8,7 +8,6 @@ bool CountNode::init()
 		{
 			return false;
 		}
-		
 		__String* str=__String::createWithFormat("%d",0);
 		//str->autorelease();
 		auto size=Director::getInstance()->getWinSize();
@@ -20,6 +19,7 @@ bool CountNode::init()
 	return bRet;
 
 }
+
 CountNode* CountNode::create()
 {
 	CountNode* b=new CountNode();
@@ -31,6 +31,7 @@ CountNode* CountNode::create()
 	delete b;
 	return nullptr;
 }
+
 void CountNode::setString(int count)
 {
 	__String* str=__String::createWithFormat("%d",count);

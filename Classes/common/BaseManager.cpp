@@ -22,11 +22,9 @@ BaseManager* BaseManager::getInstance()
 	}
 	return instance;
 }
-void BaseManager::showNode(Node* node,std::vector<int>type,const ccMenuCallback& callback,bool bAgain)
+
+void BaseManager::showNode(Node* node,std::vector<int>type, const ccMenuCallback& callback, bool bAgain)
 {
-
-
-
 	auto size=Director::getInstance()->getWinSize();
 	auto mainbg=Sprite::create("call_bg.png");
 	mainbg->setPosition(Point(size.width/2,size.height/2-70));
@@ -129,6 +127,7 @@ void BaseManager::showNode(Node* node,std::vector<int>type,const ccMenuCallback&
 		}
 	}
 }
+
 long BaseManager::getCurrentTime()
 {
 	struct timeval tv;     
@@ -136,7 +135,8 @@ long BaseManager::getCurrentTime()
 	return tv.tv_sec * 1000 + tv.tv_usec / 1000;    	
 	
 }
-void BaseManager::showExternPoke(Node* node,std::vector<PokeData> data,int timeout)
+
+void BaseManager::showExternPoke(Node* node,std::vector<PokeData> data, int timeout)
 {
 	rootNode=Node::create();
 	node->addChild(rootNode,15,48493);
@@ -166,7 +166,8 @@ void BaseManager::showExternPoke(Node* node,std::vector<PokeData> data,int timeo
 	m_tTimer->timeOut(timeout,this,time_func_selector(BaseManager::timeOut));
 	rootNode->addChild(m_tTimer);
 }
-void BaseManager::showEightPoke(Node* node,std::vector<PokeData> data,int timeout)
+
+void BaseManager::showEightPoke(Node* node, std::vector<PokeData> data, int timeout)
 {
 	rootNode=Node::create();
 	node->addChild(rootNode,15,48493);
@@ -199,11 +200,13 @@ void BaseManager::showEightPoke(Node* node,std::vector<PokeData> data,int timeou
 	}
 	rootNode->setVisible(false);
 }
+
 void BaseManager::showOut(Ref* obj)
 {
 	rootNode->setVisible(true);
 }
-void BaseManager::showRobotPoke(Node* node,std::vector<PokeListItem> data,int id)
+
+void BaseManager::showRobotPoke(Node* node, std::vector<PokeListItem> data, int id)
 {
 	auto m_node=Node::create();
 	node->addChild(m_node,15-id);
@@ -241,17 +244,19 @@ void BaseManager::showRobotPoke(Node* node,std::vector<PokeListItem> data,int id
 	}
 	log(">>>>>>>>>>>>>>>>>>>>>>>>>count = %d",count);
 }
+
 void BaseManager::timeOut(Ref* obj)
 {
 	LocalGameServer::getInstance()->deal_pokerlist();
 	rootNode->removeFromParentAndCleanup(true);
-	
 }
+
 void BaseManager::removeTimeOut(Ref* obj)
 {
 	rootNode->removeFromParentAndCleanup(true);
 	
 }
+
 MenuItemSprite* BaseManager::getMenu(std::string strName,const ccMenuCallback& callback)
 {
 	auto m_sprite=Sprite::create(strName);
@@ -259,10 +264,10 @@ MenuItemSprite* BaseManager::getMenu(std::string strName,const ccMenuCallback& c
 	auto m_item=MenuItemSprite::create(m_sprite,m_sprite,m_sprite,callback);
 	return m_item;
 }
+
 CCSprite* BaseManager::graylightWithCCSprite(std::string str,bool isLight)
 {
 	auto oldSprite=Sprite::create(str);
-	//CCSprite◊™≥…CCimage
 	CCPoint p = oldSprite->getAnchorPoint();
 	oldSprite->setAnchorPoint(ccp(0,0));
 	CCRenderTexture *outTexture = CCRenderTexture::create((int)oldSprite->getContentSize().width,(int)oldSprite->getContentSize().height);

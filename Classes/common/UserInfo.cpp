@@ -12,10 +12,12 @@ UserInfo::UserInfo()
 	iBankerMode=0;
     kCnt=0;
 }
+
 UserInfo::~UserInfo()
 {
 	
 }
+
 UserInfo* UserInfo::getInstance()
 {
 	if (instance==NULL)
@@ -25,10 +27,12 @@ UserInfo* UserInfo::getInstance()
 	}
 	return instance;
 }
+
 void UserInfo::setRoleWorldId(std::map<int,int> idlist)
 {
 	this->roleWorldId=idlist;
 }
+
 std::map<int,int> UserInfo::getRoleWorldId()
 {
 	return this->roleWorldId;

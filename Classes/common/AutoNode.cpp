@@ -13,6 +13,7 @@ bool AutoNode::init()
 	} while (0);
 	return bRet;
 }
+
 AutoNode* AutoNode::create()
 {
 	AutoNode* node=new AutoNode();
@@ -23,7 +24,8 @@ AutoNode* AutoNode::create()
 	delete node;
 	return NULL;
 }
-void AutoNode::ShowPoke(std::vector<PokeData>& data,int id,bool remove/*=false*/)
+
+void AutoNode::ShowPoke(std::vector<PokeData>& data, int id, bool remove/*=false*/)
 {
 	if (nodePoke==NULL)
 	{
@@ -94,6 +96,7 @@ void AutoNode::ShowPoke(std::vector<PokeData>& data,int id,bool remove/*=false*/
 		
 	}
 }
+
 void AutoNode::timer(float dt)
 {
 	this->unschedule(schedule_selector(AutoNode::timer));

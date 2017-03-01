@@ -162,6 +162,7 @@ void ccskynet_socket::setInetAddress(std::string ip,unsigned short port)
 	this->ip=ip;
 	this->port=port;
 }
+
 static int readall(int fd, char * buffer, size_t sz)
 {
 		for (;;) 
@@ -178,6 +179,7 @@ static int readall(int fd, char * buffer, size_t sz)
 		//exit(1);
     return 0;
 }
+
 int ccskynet_socket::ccRead(char* _buff, int _len)
 {
 	if( m_uSocket == INVALID_SOCKET )

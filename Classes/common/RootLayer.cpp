@@ -1,5 +1,6 @@
 #include "../common/RootLayer.h"
 #include "AppMacros.h"
+
 bool RootLayer::init()
 {
 	bool bRet=false;
@@ -13,10 +14,12 @@ bool RootLayer::init()
 	} while (0);
 	return bRet;
 }
+
 void RootLayer::exitGame(Ref* obj)
 {
 
 }
+
 void RootLayer::onEnter()
 {
 	Layer::onEnter();
@@ -31,23 +34,28 @@ void RootLayer::onEnter()
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 	initiation();
 }
+
 void RootLayer::onExit()
 {
 	Layer::onExit();
 
 }
+
 bool RootLayer::onTouchBegan(Touch* touch, Event* event)
 {
 	return true;
 }
+
 void RootLayer::onTouchMoved(Touch* touch, Event* event)
 {
 
 }
+
 void RootLayer::onTouchEnded(Touch* touch, Event* event)
 {
 
 }
+
 void RootLayer::showTips(std::string str,TipsStyle style,Ref* obj/* =NULL */,const ccMenuCallback& callbackoK/* =NULL */,const ccMenuCallback& callbackCancell/* =NULL */)
 {
 	auto visibleSize = Director::getInstance()->getVisibleSize();

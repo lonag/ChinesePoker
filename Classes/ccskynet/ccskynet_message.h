@@ -1,6 +1,7 @@
 #ifndef _ccskynet_message_h_
 #define _ccskynet_message_h_
 #include "../ccskynet/skynet_databuffer.h"
+
 //packet =type code id data-------size
 struct packet
 {
@@ -24,6 +25,7 @@ public:
 	unsigned short getCode();
 	unsigned int   getId();
 	unsigned short getType();
+    
 public:
 	ccskynet_message(int size=64);
 	~ccskynet_message(){}

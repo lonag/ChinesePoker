@@ -38,6 +38,7 @@ enum ccsSocketStatus
 	eSocketIoError				= -1,
 	eSocketCreateFailed			= -2,
 };
+
 class ccskynet_socket
 {
 public:
@@ -53,7 +54,8 @@ public:
 	void ccClose();
 	bool ccConnect();
 	void ccDisconnect();
-	void setInetAddress(std::string ip,unsigned short port);
+	void setInetAddress(std::string ip, unsigned short port);
+    
 protected:
 	SOCKET m_uSocket;
 	std::string ip;

@@ -28,6 +28,7 @@ public:
 	static PokeData checkX(std::vector<PokeData>&data,int id,int type);
 	//check main
 	static bool checkMain(PokeData& data,int type);
+    
 public:
 	static bool checkExistNotMainPoke(std::vector<PokeData>& data,int type);
 };

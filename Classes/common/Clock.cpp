@@ -11,7 +11,6 @@ bool Clock::init()
 		{
 			return false;
 		}
-		
 		initiation();
 		currentTime=0;
 		offsetIime=1200;
@@ -22,6 +21,7 @@ bool Clock::init()
 	} while (0);
 	return bRet;
 }
+
 void Clock::initiation()
 {
 	__String* str=__String::createWithFormat("%d",timeout);
@@ -33,6 +33,7 @@ void Clock::initiation()
 	m_clock->setPosition(point);
 	this->addChild(m_clock,3);
 }
+
 Clock* Clock::create(int timeout,Point point,Ref* b,time_out_func func)
 {
 	Clock* c=new Clock();
@@ -50,12 +51,14 @@ Clock* Clock::create(int timeout,Point point,Ref* b,time_out_func func)
 	delete c;
 	return NULL;
 }
+
 long Clock::getCurrentTime()
 {
 	struct timeval tv;     
 	gettimeofday(&tv,NULL);     
 	return tv.tv_sec * 1000 + tv.tv_usec / 1000;
 }
+
 void Clock::clockTimer(float dt)
 {
 	currentTime=getCurrentTime();
@@ -73,7 +76,6 @@ void Clock::clockTimer(float dt)
 		}
 	}
 }
-
 
 bool CallTimer::init()
 {
@@ -105,12 +107,14 @@ void CallTimer::create(Ref* b,int timeout,time_out_func func)
 		d->addChild(c);
 	}
 }
+
 long CallTimer::getCurrentTime()
 {
 	struct timeval tv;     
 	gettimeofday(&tv,NULL);     
 	return tv.tv_sec * 1000 + tv.tv_usec / 1000;
 }
+
 void CallTimer::clockTimer(float dt)
 {
 	currentTime=(unsigned int)getCurrentTime();

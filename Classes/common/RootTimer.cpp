@@ -1,4 +1,5 @@
 #include "../common/RootTimer.h"
+
 RootTimer::RootTimer()
 {
 	startTime=0;
@@ -6,6 +7,7 @@ RootTimer::RootTimer()
 	currentTime=0;
 	timeout=0;
 }
+
 RootTimer::~RootTimer()
 {
 	startTime=0;
@@ -13,6 +15,7 @@ RootTimer::~RootTimer()
 	currentTime=0;
 	timeout=0;
 }
+
 void RootTimer::timeOut(int timeout,Ref* b,time_out_func func)
 {
 	this->timeout=timeout;
@@ -21,6 +24,7 @@ void RootTimer::timeOut(int timeout,Ref* b,time_out_func func)
 	startTime=BaseManager::getInstance()->getCurrentTime();
 	this->schedule(schedule_selector(RootTimer::timer));
 }
+
 void RootTimer::timer(float dt)
 {
 	currentTime=BaseManager::getInstance()->getCurrentTime();

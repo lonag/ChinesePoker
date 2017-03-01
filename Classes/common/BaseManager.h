@@ -20,6 +20,7 @@ public:
 	void removeTimeOut(Ref* obj);
 	void showOut(Ref* obj);
 	long getCurrentTime();
+    
 public:
 	MenuItemSprite* getMenu(std::string strName,const ccMenuCallback& callback);
 	Sprite* graylightWithCCSprite(std::string str,bool isLight);

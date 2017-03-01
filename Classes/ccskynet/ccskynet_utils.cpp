@@ -7,6 +7,8 @@
 #include<direct.h>
 #endif
 
+static int randC = 0;
+
 using namespace cocos2d;
 
 string byteToHexStr(unsigned char *byte_arr, int arr_len)
@@ -39,8 +41,6 @@ string byteToHexStr(unsigned char *byte_arr, int arr_len)
 	return hexstr;
 
 }
-
-
 
 double distance(double x1, double y1, double x2, double y2) {
 	double dx = x1 - x2;
@@ -89,6 +89,7 @@ bool writeSaveData(const char* relatePath,char* buf,int len){
 	printf("writeFileData(%s) error fopen fail \n ",pszfullFilepath.c_str() );
 	return false;
 }
+
 ByteBuffer* readSaveData(const char* relatePath){	
 	string pszfullFilepath = getWriteableFullPath(relatePath);
 	ByteBuffer * pBuffer = NULL;	
@@ -143,6 +144,7 @@ ByteBuffer* getFileData(const char* pszFileName, bool isfullPath)
 		
 	return p;
 }
+
 unsigned char* getFileData(const char* pszFileName, bool isfullPath,unsigned int* size)
 {
 	string temp = pszFileName;
@@ -158,7 +160,7 @@ unsigned char* getFileData(const char* pszFileName, bool isfullPath,unsigned int
 	
 	return pBuffer;
 }
-static int randC = 0;
+
 std::string createRandString(int len,bool filter){
 	string s;
 	s.resize(len+10);

@@ -10,6 +10,7 @@ public:
 	static xTextParse* getParse();
 	int load(const char* filename);
 	std::string getDataById(std::string key);
+    
 private:
 	int parseValue(char *str, char *key, char *val);
 	char *isSectionName(char *str);

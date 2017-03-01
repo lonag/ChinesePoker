@@ -20,7 +20,9 @@ USING_NS_CC;
 #include <fcntl.h>
 #include <netinet/tcp.h>
 #endif
+
 #define SOCKET_READ_BUFFER_SIZE 8192
+
 class ccskynet_manager 
 {
 public:

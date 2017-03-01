@@ -27,6 +27,7 @@ void CommonUtils::deleteDataByKey(std::vector<PokeData>&data ,int key,int type)
 	}
 	log("delete size = %d",(int)data.size());
 }
+
 PokeData& CommonUtils::findKey(std::vector<PokeData>&data ,int key)
 {
 	//PokeData p;
@@ -37,6 +38,7 @@ PokeData& CommonUtils::findKey(std::vector<PokeData>&data ,int key)
 	}
     return data[0];
 }
+
 bool CommonUtils::CheckKey(std::vector<int>&data,int key)
 {
 	bool isExist=false;
@@ -49,6 +51,7 @@ bool CommonUtils::CheckKey(std::vector<int>&data,int key)
 	}
 	return isExist;
 }
+
 void CommonUtils::GetMenu(Node* node,std::string str,std::string pngName,const ccMenuCallback& callback,int tag,int order,Point& p)
 {
 	auto pngSprite=Sprite::create(pngName);
@@ -62,6 +65,7 @@ void CommonUtils::GetMenu(Node* node,std::string str,std::string pngName,const c
 	menuLayer->setPosition(Point::ZERO);
 	node->addChild(menuLayer,order);
 }
+
 void CommonUtils::ShowPoke(std::vector<PokeData>& data,int id)
 {
 	auto winSize=Director::getInstance()->getWinSize();
@@ -117,6 +121,7 @@ void CommonUtils::ShowPoke(std::vector<PokeData>& data,int id)
 	}
 	data.clear();
 }
+
 Point CommonUtils::ShowTipsPoint(int id)
 {
     Point p=Point(0,0);
@@ -212,6 +217,7 @@ void CommonUtils::ShowUserInfo(Node* node)
 	node->addChild(usertop,15);
 
 }
+
 PokeData CommonUtils::checkA(std::vector<PokeData>&data,int type)
 {
 	PokeData m_data;
@@ -231,6 +237,7 @@ PokeData CommonUtils::checkA(std::vector<PokeData>&data,int type)
 	m_data.data=-1;
 	return m_data;
 }
+
 PokeData CommonUtils::checkAAK(std::vector<PokeData>&data,int type)
 {
 	PokeData m_data;
@@ -280,6 +287,7 @@ PokeData CommonUtils::checkAAK(std::vector<PokeData>&data,int type)
 	m_data.data=-1;
 	return m_data;
 }
+
 PokeData CommonUtils::checkX(std::vector<PokeData>&data,int id,int type)
 {
 	for (int i=0;i<data.size();i++)
@@ -292,6 +300,7 @@ PokeData CommonUtils::checkX(std::vector<PokeData>&data,int id,int type)
     PokeData d;
     return d;
 }
+
 bool CommonUtils::checkMain(PokeData& data,int type)
 {
 	if(data.data==1)   {return true;}
@@ -301,6 +310,7 @@ bool CommonUtils::checkMain(PokeData& data,int type)
 	if(data.type==type){return true;}
 	return false;
 }
+
 bool CommonUtils::checkExistNotMainPoke(std::vector<PokeData>& data,int type)
 {
 	int count=0;

@@ -58,17 +58,10 @@ inline bool instanceof(TT const &Ref)
 
 const char* fullpathFromRelatePath(const char* relatePath);
 
-
-/**
- return : 是否存档成功
- **/
 bool writeSaveData(const char* relatepath,char* buf,int len);
-/**
- 读取存档
- */
+
 ByteBuffer* readSaveData(const char* relatepath);
 
-//读取assets包裹资源,isfullPath是否是全目录,如果是资源目录中的资源就用false，如果不是就用true
 ByteBuffer* getFileData(const char* pszfullFilepath, bool isfullPath);
 
 std::string createRandString(int len,bool filter);

@@ -1,13 +1,17 @@
 #include "xTextParse.h"
+
 static xTextParse* _xTextParse=NULL;
+
 xTextParse::xTextParse()
 {
 
 }
+
 xTextParse::~xTextParse()
 {
 
 }
+
 xTextParse* xTextParse::getParse()
 {
 	if(_xTextParse==NULL)
@@ -16,6 +20,7 @@ xTextParse* xTextParse::getParse()
 	}
 	return _xTextParse;
 }
+
 std::string xTextParse::getDataById(std::string key)
 {
 	if(_textdata.find(key)!=_textdata.end())
@@ -24,9 +29,10 @@ std::string xTextParse::getDataById(std::string key)
 	}
 	return "";
 }
+
 int xTextParse::load(const char* filename)
 {
-	FILE           *fp;
+	FILE            *fp;
     char            key[128], value[4096], data[4096];
     int             ret, line = 0;
 
@@ -44,6 +50,7 @@ int xTextParse::load(const char* filename)
 	fclose(fp);
     return 0;
 }
+
  /* ÊÇ¶ÎÃû */
 char* xTextParse::isSectionName(char *str) {
     if (str == NULL || strlen(str) <= 2 || (*str) != '[') 

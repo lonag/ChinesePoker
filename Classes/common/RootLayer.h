@@ -23,6 +23,7 @@ public:
 	virtual bool onTouchBegan(Touch* touch, Event* event);
 	virtual void onTouchMoved(Touch* touch, Event* event);
 	virtual void onTouchEnded(Touch* touch, Event* event);
+    
 public:
 	void showTips(std::string str,TipsStyle style,Ref* obj=NULL,const ccMenuCallback& callbackoK=NULL,const ccMenuCallback& callbackCancell=NULL);
 };

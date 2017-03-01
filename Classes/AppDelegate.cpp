@@ -23,7 +23,15 @@ AppDelegate::AppDelegate() {
 
 AppDelegate::~AppDelegate() 
 {
-	//::getInstance()->releaseService();
+	
+}
+
+void AppDelegate::initGLContextAttrs()
+{
+    // set OpenGL context attributes: red,green,blue,alpha,depth,stencil
+    GLContextAttrs glContextAttrs = {8, 8, 8, 8, 24, 8};
+    
+    GLView::setGLContextAttrs(glContextAttrs);
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
@@ -31,7 +39,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	auto director = Director::getInstance();
 	auto glview = director->getOpenGLView();
 	if(!glview) {
-		glview = GLView::createWithRect("iDevice", Rect(0,0,800,480));
+		glview = GLViewImpl::createWithRect("iDevice", Rect(0,0,800,480));
 		director->setOpenGLView(glview);
 	}
 	director->setOpenGLView(glview);

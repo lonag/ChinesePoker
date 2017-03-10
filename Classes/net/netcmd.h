@@ -39,9 +39,9 @@ enum{
 
 	//gate <-> group
 	CMD_AG_BEGIN = 600,
-	CMD_AG_LOGIN,                     //gateserver进程登陆到group
+	CMD_AG_LOGIN,
 	CMD_AG_PLYLOGIN,
-	CMD_AG_CLIENT_DISCONN,            //客户端连接断开 
+	CMD_AG_CLIENT_DISCONN,
 	CMD_AG_END,
 
 	CMD_GA_BEGIN = 700,
@@ -54,7 +54,7 @@ enum{
 	//game <-> group
 
 	CMD_GAMEG_BEGIN = 800,
-	CMD_GAMEG_LOGIN,                  //gameserver进程登陆到group 
+	CMD_GAMEG_LOGIN,
 	CMD_GAMEG_END,
 
 	CMD_GGAME_BEGIN = 900,
@@ -66,12 +66,12 @@ enum{
 	//game <-> gate
 
 	CMD_AGAME_BEGIN = 1000,
-	CMD_AGAME_LOGIN,                 //gateserver进程登陆到game 
-	CMD_AGAME_CLIENT_DISCONN,        //客户端连接断开   
+	CMD_AGAME_LOGIN,
+	CMD_AGAME_CLIENT_DISCONN,
 	CMD_AGAME_END,
 
 	CMD_GAMEA_BEGIN = 1100,
-	CMD_GAMEA_LOGINRET,              //gameserver对gate login的响应
+	CMD_GAMEA_LOGINRET,             
 	CMD_GAMEA_END,
 
 	//dummy cmd
@@ -83,21 +83,6 @@ enum{
 	CMD_RPC_RESPONSE,
 };
 
-
-
-/*enum{
-	//客户端到服务端
-	CMD_CS_BEGPLY = 1,//玩家请求进入地图场景,
-	CMD_CS_MOV,       //主角移动
-
-	//服务端到客户端
-	CMD_SC_BEGPLY,    //通知玩家进入地图场景成功，可以创建地图和主角
-	CMD_SC_ENTERSEE,  //对象进入主角视野
-	CMD_SC_LEVSEE,    //对象离开主角视野
-	CMD_SC_ENDPLY,    //主角离开场景地图
-	CMD_SC_MOV,       //对象移动
-
-};*/
 
 
 

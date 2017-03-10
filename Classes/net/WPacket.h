@@ -8,7 +8,7 @@ namespace net{
 class WPacket{
 
 public:
-	//前4个字节用于表示包长度,所以WPacket创建后已经有4个字节的有效数据
+	
 	WPacket(unsigned short size = 64):buffer(new ByteBuffer(size)),wpos(0)
 	{
 		buffer->WriteUint32(0,0);

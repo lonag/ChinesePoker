@@ -14,6 +14,7 @@ struct packet
 		type=1;id=1;size=0;//
 	}
 };
+
 class ccskynet_message :packet
 {
 public:

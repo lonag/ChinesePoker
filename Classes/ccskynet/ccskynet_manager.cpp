@@ -7,10 +7,12 @@ ccskynet_manager::ccskynet_manager()
 {
 
 }
+
 ccskynet_manager::~ccskynet_manager()
 {
 	t.join();
 }
+
 ccskynet_manager* ccskynet_manager::getInstance()
 {
 	if (instance==NULL)
@@ -20,6 +22,7 @@ ccskynet_manager* ccskynet_manager::getInstance()
 	}
 	return instance;
 }
+
 bool ccskynet_manager::connect()
 {
 	if( m_eStatus != eSocketConnected && m_eStatus != eSocketConnecting )
@@ -33,6 +36,7 @@ bool ccskynet_manager::connect()
 	}
 	return false;
 }
+
 void ccskynet_manager::start()
 {
 	if (connect())
@@ -45,12 +49,14 @@ void ccskynet_manager::start()
 	}
 	
 }
+
 void ccskynet_manager::send(ccskynet_message* mess)
 {
  	if( mess==NULL /*|| !isConnected()*/ )
  		return;
 	m_PsendBufferQueue.push_back(mess);
 }
+
 void* ccskynet_manager::run(void* u)
 {
 	ccskynet_manager* ccs=(ccskynet_manager*)u;
@@ -80,7 +86,6 @@ void* ccskynet_manager::run(void* u)
 				case eSocketConnecting:
 					{
 						log("time out");
-						//超时判断
 					}
 					break;
 				default:
@@ -100,7 +105,7 @@ void* ccskynet_manager::run(void* u)
 					}
 					else
 					{
-						//log("can read");
+						log("can read");
 				
 					}
 						
@@ -114,7 +119,7 @@ void* ccskynet_manager::run(void* u)
 					}
 					else
 					{
-						//log("can write");
+						log("can write");
 					}
 						
 				}
@@ -122,9 +127,8 @@ void* ccskynet_manager::run(void* u)
 			break;
 		default:
 			break;
-		}	
-		//log("thread sleep 1000");
-		//Sleep(1000);
+		}
+        
 		 this_thread::sleep_for(chrono::milliseconds(1000));
 	}
 	return NULL;
@@ -150,6 +154,7 @@ void ccskynet_manager::close()
 		onDisconnected();
 	}
 }
+
 bool ccskynet_manager::canRead()
 {
 	int ret=ccsSocket.ccRead(m_pReadBuffer,SOCKET_READ_BUFFER_SIZE);
@@ -185,10 +190,10 @@ bool ccskynet_manager::canRead()
 // 			
 // 		}
 		//log("socket string len = %x ",m_pReadBuffer);
-		//数据处理
 	}
 	return false;
 }
+
 bool ccskynet_manager::canWrite()
 {
 	if (m_PsendBufferQueue.empty())

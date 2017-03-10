@@ -5,9 +5,9 @@
 #include <vector>
 #include <string>
 #include <cmath>
-//algorithm头文件包含make_heap,pop_heap等堆操作（android）by hubin.
+
 #include <algorithm>
-//增加sleep方法的头文件，不然android版本着不到对应的函数，iphone的是默认找的苹果系统里的同样方法 by hubin
+
 
 class ByteBuffer;
 
@@ -22,9 +22,7 @@ using namespace std;
 #define SQ_SAFE_DELETE(x)       {if(x){ delete x; x = 0; }}
 #define SQ_SAFE_DELETE_ARRAY(x) {if(x){ delete[] x; x = 0; }}
 #define SQ_SAFE_DELETE_VEC(x) {for(int i = 0; i < x->size();i++){delete (x+i);}delete[] x;}
-/**
- * @Fields ERROR_INS : 误差修正
- */
+
 static const double ERROR_INS = 0.005;
 extern unsigned char* readFile(const char *filename);
 extern string byteToHexStr(unsigned char *byte_arr, int arr_len);

@@ -1,12 +1,14 @@
 #ifndef _SOCKET_H
 #define _SOCKET_H
 
+#include "cocos2d.h"
+
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)	
-//#include <winsock2.h>
-//#include <WinBase.h>
-//#include <Winerror.h>
-//#include <stdio.h>
-//#include <WS2tcpip.h>
+#include <winsock2.h>
+#include <WinBase.h>
+#include <Winerror.h>
+#include <stdio.h>
+#include <WS2tcpip.h>
 
 #define INVAILD_FD INVALID_SOCKET
 

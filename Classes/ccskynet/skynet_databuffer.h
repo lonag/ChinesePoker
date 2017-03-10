@@ -16,16 +16,10 @@ public:
 	ByteBuffer(int capacity);
 	ByteBuffer(char* data,int offset,int length);
 	~ByteBuffer();
-
 	int remaining();
-
 	////void markPosition();
 	void setIntAt(int n,int index);
-
 	void put(const char* bytes,int offset,int len);
-
-
-
 	void put(int n);
 	void putBoolean(bool b);
 	void putByte(byte b);
@@ -79,7 +73,6 @@ public:
 	float getFloat();
 	short getShort();
 
-
 	std::string getLine();
 
 	long long getLong();
@@ -90,15 +83,9 @@ public:
 	void clear();
 	int getLength(int offset);
 	void getAsBytes(byte* bytes);
-
-
 	void flip();//
-
 	void compact();
-
 	void rewind();
-
-
 };
 
 

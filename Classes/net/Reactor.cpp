@@ -74,7 +74,7 @@ void Reactor::LoopOnce(unsigned int ms){
 		size_t size = sockets.Size();
 		while(size){
 			Socket *s = (Socket*)sockets.Pop();
-			s->IncRef();//方式Socket在OnReadAct或OnWriteAct中被释放
+			s->IncRef();
 			if(FD_ISSET(s->Fd(), &e_set) || ((s->Event() & EV_READ) && FD_ISSET(s->Fd(), &r_set)))
 				s->onReadAct();
 			if((s->Event() & EV_WRITE) && FD_ISSET(s->Fd(), &w_set))

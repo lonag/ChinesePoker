@@ -16,7 +16,7 @@ bool Connect(const char *ip,unsigned short port,on_connect,on_connect_fail,on_di
 
 void Close();
 
-void Run(unsigned int ms = 0);//运行主消息循环
+void Run(unsigned int ms = 0);
 
 
 //CMD_CA_LOGIN

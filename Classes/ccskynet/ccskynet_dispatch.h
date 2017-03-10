@@ -2,7 +2,9 @@
 #define _ccskynet_dispatch_
 #include "cocos2d.h"
 #include "../ccskynet/ccskynet_manager.h"
+
 USING_NS_CC;
+
 typedef void (Ref::*fnPacketfunc)(ccskynet_message* mess);
 typedef void (*SMsgFun_Decleared) (void* target, ccskynet_message* msg);
 typedef struct SMsgReceiver
@@ -21,10 +23,8 @@ class ccskynet_dispatch
 public:
 	ccskynet_dispatch();
 	~ccskynet_dispatch();
-    
 public:
 	static ccskynet_dispatch* getInstance();
-	
 public:
 	bool dispatch_message(const char* msgType, ccskynet_message* msg);
 	void register_message(const char* msgType,Ref* obj, ccskynet_message* mess, fnPacketfunc func);

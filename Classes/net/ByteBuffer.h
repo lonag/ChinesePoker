@@ -29,7 +29,7 @@ public:
 
 	ByteBuffer* IncRef(){
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
-		//InterlockedIncrement(&refCount);
+    InterlockedIncrement(&refCount);
 #else
 		__sync_add_and_fetch(&refCount,1);
 #endif
@@ -38,7 +38,7 @@ public:
 
 	void DecRef(){
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
-		//if(InterlockedDecrement(&refCount) <= 0)
+		if(InterlockedDecrement(&refCount) <= 0)
 #else
 		if(__sync_sub_and_fetch(&refCount,1) <=0 )
 #endif

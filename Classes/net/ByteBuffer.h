@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
-//#include <Windows.h>
+#include <Windows.h>
 #endif
 
 namespace net{
